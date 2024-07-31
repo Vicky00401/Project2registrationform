@@ -1,111 +1,273 @@
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Countdown Timer</title>
-        <style>
-		@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
-* {
-    box-sizing: border-box;
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+	    body{
+
+  background: rgb(33,33,38);
+
+  background: radial-gradient(circle, rgba(33,33,38,1) 0%, rgba(1,1,1,1) 100%);
+
+  color: white;
+
+  font-size: 30px;
+
 }
 
-body {
-    background-image: url("./snow.jpg");
-    background-size: cover;
-    background-position: center center;
+#registration-form {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
-    min-height: 100vh;
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-}
 
-h1 {
-    font-weight: normal;
-    font-size: 4rem;
-    margin-top: 5rem;
-}
+  }
 
-.countdown-container {
+  
+
+  #registration-form div {
+
+    margin: 10px 0;
+
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
-.big-text {
-    font-weight: bold;
-    font-size: 6rem;
-    line-height: 1;
-    margin: 1rem 2rem;
-}
+    flex-direction: column;
 
-.countdown-el {
-    text-align: center;
-}
+    align-items: center;
 
-.countdown-el span {
-    font-size: 1.3rem;
-		}
-	</style>
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <h1>New Years Eve</h1>
+  }
 
-        <div class="countdown-container">
-            <div class="countdown-el days-c">
-                <p class="big-text" id="days">0</p>
-                <span>days</span>
-            </div>
-            <div class="countdown-el hours-c">
-                <p class="big-text" id="hours">0</p>
-                <span>hours</span>
-            </div>
-            <div class="countdown-el mins-c">
-                <p class="big-text" id="mins">0</p>
-                <span>mins</span>
-            </div>
-            <div class="countdown-el seconds-c">
-                <p class="big-text" id="seconds">0</p>
-                <span>seconds</span>
-            </div>
-        </div>
-	    <script>
-		    const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minsEl = document.getElementById("mins");
-const secondsEl = document.getElementById("seconds");
+  
 
-const newYears = "3 Dec 2020";
+  #registration-form label,
 
-function countdown() {
-    const newYearsDate = new Date(newYears);
-    const currentDate = new Date();
+  #registration-form input,
 
-    const totalSeconds = (newYearsDate - currentDate) / 1000;
+  #registration-form textarea {
 
-    const days = Math.floor(totalSeconds / 3600 / 24);
-    const hours = Math.floor(totalSeconds / 3600) % 24;
-    const mins = Math.floor(totalSeconds / 60) % 60;
-    const seconds = Math.floor(totalSeconds) % 60;
+    width: 300px;
 
-    daysEl.innerHTML = days;
-    hoursEl.innerHTML = formatTime(hours);
-    minsEl.innerHTML = formatTime(mins);
-    secondsEl.innerHTML = formatTime(seconds);
-}
+    padding: 10px;
 
-function formatTime(time) {
-    return time < 10 ? `0${time}` : time;
-}
+    font-size: 20px;
 
-// initial call
-countdown();
+  }
 
-setInterval(countdown, 1000);
-	    </script>
-    </body>
+  
+
+  #registration-form button {
+
+    padding: 10px 20px;
+
+    margin: 10px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+  }
+
+  
+
+  form {
+
+    width: 500px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+    border: 1px solid gray;
+
+    border-radius: 10px;
+
+  }
+
+  
+
+  label, input[type="submit"], input[type="reset"] {
+
+    font-size: 1.2em;
+
+    margin-top: 10px;
+
+    display: block;
+
+  }
+
+  
+
+  label {
+
+    margin-bottom: 5px;
+
+  }
+
+  
+
+  input[type="text"], input[type="email"], input[type="password"] {
+
+    padding: 5px;
+
+    width: 100%;
+
+    font-size: 1.2em;
+
+    margin-bottom: 20px;
+
+  }
+
+  
+
+  input[type="submit"], input[type="reset"] {
+
+    padding: 10px 20px;
+
+    background-color: lightblue;
+
+    border: none;
+
+    border-radius: 5px;
+
+    color: white;
+
+    cursor: pointer;
+
+  }
+
+  
+
+  input[type="submit"]:hover, input[type="reset"]:hover {
+
+    background-color: rgb(157, 157, 176);
+
+  }
+
+  
+    </style>
+
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">Registration Form</h1>
+
+
+
+<form id="registration-form">
+
+  <div>
+
+    <label for="name">Name:</label>
+
+    <input type="text" id="name" name="name">
+
+  </div>
+
+
+
+  <div>
+
+    <label for="email">Email:</label>
+
+    <input type="email" id="email" name="email">
+
+  </div>
+
+
+
+  <div>
+
+    <label for="password">Password:</label>
+
+    <input type="password" id="password" name="password">
+
+  </div>
+
+
+
+  <div>
+
+    <label for="address">Address:</label>
+
+    <input type="text" id="address" name="address">
+
+  </div>
+
+
+
+  <div>
+
+    <label for="phone">Phone:</label>
+
+    <input type="text" id="phone" name="phone">
+
+  </div>
+
+
+
+  <div>
+
+    <input type="submit" value="Submit">
+
+    <input type="reset" value="Reset">
+
+  </div>
+
+</form>
+
+
+
+    <script>
+	    const form = document.getElementById("registration-form");
+form.addEventListener("submit", function(event) {       // to listen (handle) the event 
+  event.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const address = document.getElementById("address").value;
+  const phone = document.getElementById("phone").value;
+
+  if (name === "" || email === "" || password === "" || address === "" || phone === "") {
+    alert("All fields are required");
+    return false;
+  }
+
+  if (phone.length !== 10) {
+    alert("Phone number must be 10 digits");
+    return false;
+  }
+
+  if (/\d/.test(name)) {
+    alert("Name cannot contain digits");
+    return false;
+  }
+
+  if (!/\d/.test(password) || password.length < 8) {
+    alert("Password must contain at least one number and be at least 8 characters long");
+    return false;
+  }
+
+  alert(`Name: ${name}
+  Email: ${email}
+  Password: ${password}
+  Address: ${address}
+  Phone: ${phone}`);
+});
+    </script>
+
+</body>
+
 </html>
